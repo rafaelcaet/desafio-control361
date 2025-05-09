@@ -33,53 +33,53 @@ export default function TableSection() {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               EAD 7328
             </TableHead>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               000001
             </TableHead>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               Motor
             </TableHead>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               FH 460
             </TableHead>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               Em viagem
             </TableHead>
           </TableRow>
           <TableRow>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               EAD 7328
             </TableHead>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               000001
             </TableHead>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               Motor
             </TableHead>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               FH 460
             </TableHead>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               Em viagem
             </TableHead>
           </TableRow>
           <TableRow>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               EAD 7328
             </TableHead>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               000001
             </TableHead>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               Motor
             </TableHead>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               FH 460
             </TableHead>
-            <TableHead className="text-center text-lg font-light text-white/60">
+            <TableHead className="text-center text-sm font-light text-white/60">
               Em viagem
             </TableHead>
           </TableRow>
