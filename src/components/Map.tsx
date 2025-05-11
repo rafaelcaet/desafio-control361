@@ -17,7 +17,7 @@ const defaultCenter = {
 };
 
 export default function Map() {
-  const { apiReponse } = useVehicle();
+  const { apiReponse, isLoading } = useVehicle();
   const vehicleLocations = apiReponse?.locationVehicles;
 
   const [openMarkerProps, setOpenMarkerProps] = useState(false);
@@ -45,6 +45,11 @@ export default function Map() {
           center={defaultCenter}
           zoom={13}
         >
+          {isLoading && (
+            <div className="h-[500px] w-full absolute inset-0 z-50 flex items-center justify-center bg-black/50">
+              <div className="w-8 h-8 border-4 border-[#0095E4] border-t-transparent rounded-full animate-spin" />
+            </div>
+          )}
           {vehicleLocations &&
             vehicleLocations.map((vehicle: VehicleLocation, index: number) => {
               const colorIndex = (index % 5) + 1;
