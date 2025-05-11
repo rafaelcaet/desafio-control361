@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import { VehicleProvider } from "@/contexts/VehicleContext"; // ajuste o path conforme necessário
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500"],
@@ -21,8 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} bg-[#001622] antialiased`}>
-        <Header />
-        <main className="pt-16">{children}</main>
+        <VehicleProvider>
+          <Header />
+          <main className="pt-16">{children}</main>
+        </VehicleProvider>
       </body>
     </html>
   );

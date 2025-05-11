@@ -1,14 +1,11 @@
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "./ui/table";
+"use client";
+import { useVehicle } from "@/hooks/useVehicle";
+import { Table, TableBody, TableHead, TableHeader, TableRow } from "./ui/table";
+import { Vehicle } from "@/types/Vehicle";
 
 export default function TableSection() {
+  const { apiReponse } = useVehicle();
+  const vehicles = apiReponse?.vehicles;
   return (
     <div className="text-white font-semibold">
       <Table>
@@ -32,57 +29,26 @@ export default function TableSection() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              EAD 7328
-            </TableHead>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              000001
-            </TableHead>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              Motor
-            </TableHead>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              FH 460
-            </TableHead>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              Em viagem
-            </TableHead>
-          </TableRow>
-          <TableRow>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              EAD 7328
-            </TableHead>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              000001
-            </TableHead>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              Motor
-            </TableHead>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              FH 460
-            </TableHead>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              Em viagem
-            </TableHead>
-          </TableRow>
-          <TableRow>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              EAD 7328
-            </TableHead>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              000001
-            </TableHead>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              Motor
-            </TableHead>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              FH 460
-            </TableHead>
-            <TableHead className="text-center text-sm font-light text-white/60">
-              Em viagem
-            </TableHead>
-          </TableRow>
+          {vehicles &&
+            vehicles.map((vehicle: Vehicle, index: number) => (
+              <TableRow key={index}>
+                <TableHead className="text-center text-sm font-light text-white/60">
+                  {vehicle.plate}
+                </TableHead>
+                <TableHead className="text-center text-sm font-light text-white/60">
+                  {vehicle.fleet}
+                </TableHead>
+                <TableHead className="text-center text-sm font-light text-white/60">
+                  {vehicle.type}
+                </TableHead>
+                <TableHead className="text-center text-sm font-light text-white/60">
+                  {vehicle.model}
+                </TableHead>
+                <TableHead className="text-center text-sm font-light text-white/60">
+                  {vehicle.status}
+                </TableHead>
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
     </div>
