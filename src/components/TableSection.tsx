@@ -3,9 +3,23 @@ import { useVehicle } from "@/hooks/useVehicle";
 import { Table, TableBody, TableHead, TableHeader, TableRow } from "./ui/table";
 import { Vehicle } from "@/types/Vehicle";
 
-export default function TableSection() {
+interface TableSectionProps {
+  search: string;
+}
+
+export default function TableSection({ search }: TableSectionProps) {
   const { apiReponse } = useVehicle();
-  const vehicles = apiReponse?.vehicles;
+  let vehicles = apiReponse?.vehicles || [];
+
+  vehicles = vehicles.filter((vehicle: Vehicle) => {
+    const lower = search.toLowerCase();
+
+    const plateMatch = vehicle.plate?.toLowerCase().includes(lower) ?? false;
+    const fleetMatch = vehicle.fleet?.toLowerCase().includes(lower) ?? false;
+
+    return plateMatch || fleetMatch;
+  });
+
   return (
     <div className="text-white font-semibold">
       <Table>
